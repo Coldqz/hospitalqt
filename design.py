@@ -9,6 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -89,9 +90,11 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.label_9, 4, 1, 1, 1)
         self.dateEdit = QtWidgets.QDateEdit(self.gridLayoutWidget_2)
         self.dateEdit.setObjectName("dateEdit")
+        self.dateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         self.gridLayout_2.addWidget(self.dateEdit, 3, 2, 1, 1)
         self.dateEdit_2 = QtWidgets.QDateEdit(self.gridLayoutWidget_2)
         self.dateEdit_2.setObjectName("dateEdit_2")
+        self.dateEdit_2.setDateTime(QtCore.QDateTime.currentDateTime())
         self.gridLayout_2.addWidget(self.dateEdit_2, 4, 2, 1, 1)
         self.pushButtonprevious = QtWidgets.QPushButton(self.tab)
         self.pushButtonprevious.setGeometry(QtCore.QRect(500, 460, 121, 31))
@@ -109,10 +112,18 @@ class Ui_MainWindow(object):
         self.photoLabel.setGeometry(QtCore.QRect(540, 30, 241, 211))
         self.photoLabel.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.photoLabel.setObjectName("photoLabel")
-        self.photoLabel.setStyleSheet("border: 1px solid black;")
         self.loadphoto = QtWidgets.QPushButton(self.tab)
         self.loadphoto.setGeometry(QtCore.QRect(540, 250, 241, 23))
         self.loadphoto.setObjectName("loadphoto")
+        self.pushButton_3 = QtWidgets.QPushButton(self.tab)
+        self.pushButton_3.setGeometry(QtCore.QRect(440, 300, 75, 23))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.lineEdit = QtWidgets.QLineEdit(self.tab)
+        self.lineEdit.setGeometry(QtCore.QRect(440, 330, 71, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.clearbutton = QtWidgets.QPushButton(self.tab)
+        self.clearbutton.setGeometry(QtCore.QRect(620, 320, 75, 23))
+        self.clearbutton.setObjectName("clearbutton")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -149,5 +160,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "Обновити"))
         self.photoLabel.setText(_translate("MainWindow", "TextLabel"))
         self.loadphoto.setText(_translate("MainWindow", "Завантажити фото"))
+        self.pushButton_3.setText(_translate("MainWindow", "test download"))
+        self.clearbutton.setText(_translate("MainWindow", "clear"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Пацієнт"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tab 2"))
