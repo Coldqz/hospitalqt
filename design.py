@@ -109,6 +109,7 @@ class Ui_MainWindow(object):
         self.photoLabel.setGeometry(QtCore.QRect(540, 30, 241, 211))
         self.photoLabel.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.photoLabel.setObjectName("photoLabel")
+        self.photoLabel.setStyleSheet("border: 1px solid black;")
         self.loadphoto = QtWidgets.QPushButton(self.tab)
         self.loadphoto.setGeometry(QtCore.QRect(540, 250, 241, 23))
         self.loadphoto.setObjectName("loadphoto")
