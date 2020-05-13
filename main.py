@@ -2,6 +2,7 @@ import sys
 import sqlite3
 from design import Ui_MainWindow
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QImage,QPixmap
 
 db = sqlite3.connect("hospitaltest.db")
 cursor = db.cursor()
@@ -15,7 +16,17 @@ class App(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.add)
-        self.ui.
+        self.ui.loadphoto.clicked.connect(self.uploadphoto)
+        pixmap = QPixmap('default.jpg')
+        pixmap = pixmap.scaled(241, 211)
+        self.ui.photoLabel.setPixmap(pixmap)
+
+
+    def test(self):
+        self.ui.lineEditname.setText("qweq")
+
+    def uploadphoto(self):
+        self.photoLabel.setPixmap()
 
     def add(self):
         name = self.ui.lineEditname.text()

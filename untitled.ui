@@ -80,12 +80,21 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineage"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="linesurname"/>
+       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
           <string>Ім'я</string>
          </property>
         </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditname"/>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_4">
@@ -100,15 +109,6 @@
           <string>Вік</string>
          </property>
         </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEditname"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="linesurname"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineage"/>
        </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="linebirth"/>
@@ -177,16 +177,6 @@
        </item>
       </layout>
      </widget>
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>30</y>
-        <width>241</width>
-        <height>251</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButtonprevious">
       <property name="geometry">
        <rect>
@@ -237,6 +227,35 @@
       </property>
       <property name="text">
        <string>Обновити</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="photoLabel">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>30</y>
+        <width>241</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="loadphoto">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>250</y>
+        <width>241</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Завантажити фото</string>
       </property>
      </widget>
     </widget>
