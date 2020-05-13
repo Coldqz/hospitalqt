@@ -1,6 +1,11 @@
 import sys
 import sqlite3
-#test5
-db = sqlite3.connect('hospital.db')
+from PyQt5 import QtWidgets
+
+db = sqlite3.connect("hospital.db")
 cursor = db.cursor()
 db.commit()
+
+class App(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
