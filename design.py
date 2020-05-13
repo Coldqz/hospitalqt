@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'design.ui'
+# Form implementation generated from reading ui file 'untitled.ui'
 #
 # Created by: PyQt5 UI code generator 5.13.2
 #
@@ -22,7 +22,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(0, -10, 830, 561))
+        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 830, 561))
         self.tabWidget.setMinimumSize(QtCore.QSize(830, 561))
         self.tabWidget.setMaximumSize(QtCore.QSize(830, 561))
         self.tabWidget.setObjectName("tabWidget")
@@ -103,6 +103,12 @@ class Ui_MainWindow(object):
         self.pushButtonnext = QtWidgets.QPushButton(self.tab)
         self.pushButtonnext.setGeometry(QtCore.QRect(660, 460, 121, 31))
         self.pushButtonnext.setObjectName("pushButtonnext")
+        self.pushButton = QtWidgets.QPushButton(self.tab)
+        self.pushButton.setGeometry(QtCore.QRect(500, 400, 121, 51))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.tab)
+        self.pushButton_2.setGeometry(QtCore.QRect(660, 400, 121, 51))
+        self.pushButton_2.setObjectName("pushButton_2")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -135,5 +141,7 @@ class Ui_MainWindow(object):
         self.label_9.setText(_translate("MainWindow", "Дата виписки"))
         self.pushButtonprevious.setText(_translate("MainWindow", "Назад"))
         self.pushButtonnext.setText(_translate("MainWindow", "Вперед"))
+        self.pushButton.setText(_translate("MainWindow", "Додати"))
+        self.pushButton_2.setText(_translate("MainWindow", "Обновити"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Пацієнт"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tab 2"))
