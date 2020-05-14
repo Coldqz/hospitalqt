@@ -1,7 +1,16 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'untitledadd.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.2
+#
+# WARNING! All changes made in this file will be lost!
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
+class Ui_AddWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(830, 590)
@@ -131,6 +140,9 @@ class Ui_MainWindow(object):
         self.label_18 = QtWidgets.QLabel(self.tab)
         self.label_18.setGeometry(QtCore.QRect(50, 250, 41, 31))
         self.label_18.setObjectName("label_18")
+        self.backbutton = QtWidgets.QPushButton(self.tab)
+        self.backbutton.setGeometry(QtCore.QRect(20, 10, 75, 23))
+        self.backbutton.setObjectName("backbutton")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -234,6 +246,7 @@ class Ui_MainWindow(object):
         self.labeldiagnosis.setText(_translate("MainWindow", "Дігноз"))
         self.labeldiagnosisdepartment.setText(_translate("MainWindow", "Відділення"))
         self.label_18.setText(_translate("MainWindow", "Лікар"))
+        self.backbutton.setText(_translate("MainWindow", "Назад"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Пацієнт"))
         self.photoLabel_2.setText(_translate("MainWindow", "TextLabel"))
         self.label_10.setText(_translate("MainWindow", "Прізвище"))

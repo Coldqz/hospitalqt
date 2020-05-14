@@ -1,6 +1,7 @@
 import sys
 import sqlite3
-from mainwindow import Ui_MainWindow
+
+from mainWindowDesign import Ui_MainWindow
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QPixmap
@@ -22,7 +23,8 @@ def writeTofile(data, filename):
         file.write(data)
     print("Stored blob data into: ", filename, "\n")
 
-class MainWindow(QtWidgets.QMainWindow):
+class AddWindow(QtWidgets.QMainWindow):
+
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
@@ -32,6 +34,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.loadphoto.clicked.connect(self.uploadphoto)
         # self.ui.pushButton_3.clicked.connect(self.testdownload)
         self.ui.clearbutton.clicked.connect(self.clear)
+        self.ui.backbutton.clicked.connect(self.back)
 #default photo init
         global defpixmap
         defpixmap = QPixmap('default.jpg')
@@ -93,7 +96,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.dateEdit_2.setDateTime(QtCore.QDateTime.currentDateTime())
         self.ui.photoLabel.setPixmap(defpixmap)
 
+    def back(self):
+        # self.window = QtWidgets.QMainWindow()
+        # self.ui = Ui_ViewWindow()
+        # self.ui.setupUi(self.window)
+        # self.window.show()
+        print("asd")
+        #AddWindow.hide(self)
+
 app = QtWidgets.QApplication(sys.argv)
-window = MainWindow()
+window = AddWindow()
 window.show()
 app.exec_()
