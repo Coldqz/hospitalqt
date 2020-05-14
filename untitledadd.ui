@@ -59,110 +59,6 @@
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Перегляд</string>
-     </attribute>
-     <widget class="QPushButton" name="updatebutton">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>440</y>
-        <width>191</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Обновити</string>
-      </property>
-     </widget>
-     <widget class="QTableWidget" name="tableWidget">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>0</y>
-        <width>581</width>
-        <height>521</height>
-       </rect>
-      </property>
-      <property name="columnCount">
-       <number>10</number>
-      </property>
-      <column>
-       <property name="text">
-        <string>Number</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Name</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Surname</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Age</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Birthday</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Address</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Phone</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Chamber</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>DateIn</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>DateOut</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QPushButton" name="searchbynumber">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>180</y>
-        <width>191</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>SearchByNumber</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEditsearch">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>150</y>
-        <width>191</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
       <string>Пацієнт</string>
@@ -425,6 +321,19 @@
       </property>
       <property name="text">
        <string>Лікар</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backbutton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Назад</string>
       </property>
      </widget>
     </widget>

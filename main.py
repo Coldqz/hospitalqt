@@ -2,9 +2,12 @@ import sys
 import sqlite3
 
 from mainWindowDesign import Ui_MainWindow
-from PyQt5 import QtWidgets, QtCore
+from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtSql import QSqlDatabase, QSqlQuery, QSqlQueryModel
+from PyQt5.QtWidgets import QApplication, QTableView
+from PyQt5.QtCore import Qt
 
 db = sqlite3.connect("hospitaltest.db")
 cursor = db.cursor()
@@ -23,7 +26,7 @@ def writeTofile(data, filename):
         file.write(data)
     print("Stored blob data into: ", filename, "\n")
 
-class AddWindow(QtWidgets.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -32,9 +35,10 @@ class AddWindow(QtWidgets.QMainWindow):
 #buttons init
         self.ui.pushButton.clicked.connect(self.add)
         self.ui.loadphoto.clicked.connect(self.uploadphoto)
-        # self.ui.pushButton_3.clicked.connect(self.testdownload)
+        self.ui.pushButton_3.clicked.connect(self.testdownload)
         self.ui.clearbutton.clicked.connect(self.clear)
-        self.ui.backbutton.clicked.connect(self.back)
+        self.ui.updatebutton.clicked.connect(self.updateinfo)
+        self.ui.searchbynumber.clicked.connect(self.searchbyid)
 #default photo init
         global defpixmap
         defpixmap = QPixmap('default.jpg')
@@ -72,16 +76,16 @@ class AddWindow(QtWidgets.QMainWindow):
         db.commit()
 
 #test method for download photo from bd to folder
-    # def testdownload(self):
-    #     nametmp = self.ui.lineEdit.text()
-    #     cursor.execute("""SELECT patientid, patientphoto FROM patients WHERE patientid = ? """, nametmp)
-    #
-    #     record = cursor.fetchall()
-    #     for row in record:
-    #         idtmp = row[0]
-    #         photo = row[1]
-    #     photoPath = "D:\Desktop\hospitalqt\\" + str(idtmp) + ".jpg"
-    #     writeTofile(photo, photoPath)
+    def testdownload(self):
+        nametmp = self.ui.lineEdit.text()
+        cursor.execute("""SELECT patientid, patientphoto FROM patients WHERE patientid = ? """, nametmp)
+
+        record = cursor.fetchall()
+        for row in record:
+            idtmp = row[0]
+            photo = row[1]
+        photoPath = "D:\Desktop\hospitalqt\\" + str(idtmp) + ".jpg"
+        writeTofile(photo, photoPath)
 
 #method for clear all lineedit elements
     def clear(self):
@@ -96,15 +100,26 @@ class AddWindow(QtWidgets.QMainWindow):
         self.ui.dateEdit_2.setDateTime(QtCore.QDateTime.currentDateTime())
         self.ui.photoLabel.setPixmap(defpixmap)
 
-    def back(self):
-        # self.window = QtWidgets.QMainWindow()
-        # self.ui = Ui_ViewWindow()
-        # self.ui.setupUi(self.window)
-        # self.window.show()
-        print("asd")
-        #AddWindow.hide(self)
+    def searchbyid(self):
+        tmpid = self.ui.lineEditsearch.text()
+        record = cursor.execute("""SELECT patientid, patientname, patientsurname, patientage, patientbirthdate, patientadress, patientphone, patientchamber, patientdatein, patientdateout FROM patients WHERE patientid = ?""", tmpid)
+        self.ui.tableWidget.setRowCount(0)
+        for row_number, row_data in enumerate(record):
+            self.ui.tableWidget.insertRow(row_number)
+            for column_number, data in enumerate(row_data):
+                self.ui.tableWidget.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
+
+    def updateinfo(self):
+        query = "SELECT patientid, patientname, patientsurname, patientage, patientbirthdate, patientadress, patientphone, patientchamber, patientdatein, patientdateout FROM patients"
+        record = cursor.execute(query)
+        self.ui.tableWidget.setRowCount(0)
+        for row_number, row_data in enumerate(record):
+            self.ui.tableWidget.insertRow(row_number)
+            for column_number, data in enumerate(row_data):
+                self.ui.tableWidget.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
+
 
 app = QtWidgets.QApplication(sys.argv)
-window = AddWindow()
+window = MainWindow()
 window.show()
 app.exec_()
