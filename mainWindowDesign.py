@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'untitledadd.ui'
+# Form implementation generated from reading ui file 'untitled.ui'
 #
 # Created by: PyQt5 UI code generator 5.13.2
 #
@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_AddWindow(object):
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(830, 590)
@@ -26,6 +26,43 @@ class Ui_AddWindow(object):
         self.tabWidget.setMinimumSize(QtCore.QSize(841, 551))
         self.tabWidget.setMaximumSize(QtCore.QSize(841, 551))
         self.tabWidget.setObjectName("tabWidget")
+        self.tab_3 = QtWidgets.QWidget()
+        self.tab_3.setObjectName("tab_3")
+        self.updatebutton = QtWidgets.QPushButton(self.tab_3)
+        self.updatebutton.setGeometry(QtCore.QRect(20, 440, 191, 61))
+        self.updatebutton.setObjectName("updatebutton")
+        self.tableWidget = QtWidgets.QTableWidget(self.tab_3)
+        self.tableWidget.setGeometry(QtCore.QRect(240, 0, 581, 521))
+        self.tableWidget.setColumnCount(10)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(7, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(8, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(9, item)
+        self.searchbynumber = QtWidgets.QPushButton(self.tab_3)
+        self.searchbynumber.setGeometry(QtCore.QRect(20, 180, 191, 51))
+        self.searchbynumber.setObjectName("searchbynumber")
+        self.lineEditsearch = QtWidgets.QLineEdit(self.tab_3)
+        self.lineEditsearch.setGeometry(QtCore.QRect(20, 150, 191, 21))
+        self.lineEditsearch.setObjectName("lineEditsearch")
+        self.tabWidget.addTab(self.tab_3, "")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
         self.gridLayoutWidget = QtWidgets.QWidget(self.tab)
@@ -140,9 +177,6 @@ class Ui_AddWindow(object):
         self.label_18 = QtWidgets.QLabel(self.tab)
         self.label_18.setGeometry(QtCore.QRect(50, 250, 41, 31))
         self.label_18.setObjectName("label_18")
-        self.backbutton = QtWidgets.QPushButton(self.tab)
-        self.backbutton.setGeometry(QtCore.QRect(20, 10, 75, 23))
-        self.backbutton.setObjectName("backbutton")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -228,6 +262,29 @@ class Ui_AddWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Hospitalqt"))
+        self.updatebutton.setText(_translate("MainWindow", "Обновити"))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Number"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Name"))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Surname"))
+        item = self.tableWidget.horizontalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Age"))
+        item = self.tableWidget.horizontalHeaderItem(4)
+        item.setText(_translate("MainWindow", "Birthday"))
+        item = self.tableWidget.horizontalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Address"))
+        item = self.tableWidget.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "Phone"))
+        item = self.tableWidget.horizontalHeaderItem(7)
+        item.setText(_translate("MainWindow", "Chamber"))
+        item = self.tableWidget.horizontalHeaderItem(8)
+        item.setText(_translate("MainWindow", "DateIn"))
+        item = self.tableWidget.horizontalHeaderItem(9)
+        item.setText(_translate("MainWindow", "DateOut"))
+        self.searchbynumber.setText(_translate("MainWindow", "SearchByNumber"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Перегляд"))
         self.label.setText(_translate("MainWindow", "Ім\'я"))
         self.label_3.setText(_translate("MainWindow", "Вік"))
         self.label_2.setText(_translate("MainWindow", "Прізвище"))
@@ -246,7 +303,6 @@ class Ui_AddWindow(object):
         self.labeldiagnosis.setText(_translate("MainWindow", "Дігноз"))
         self.labeldiagnosisdepartment.setText(_translate("MainWindow", "Відділення"))
         self.label_18.setText(_translate("MainWindow", "Лікар"))
-        self.backbutton.setText(_translate("MainWindow", "Назад"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Пацієнт"))
         self.photoLabel_2.setText(_translate("MainWindow", "TextLabel"))
         self.label_10.setText(_translate("MainWindow", "Прізвище"))
