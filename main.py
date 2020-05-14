@@ -1,42 +1,45 @@
 import sys
 import sqlite3
-from design import Ui_MainWindow
+from mainwindow import Ui_MainWindow
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QFileDialog
-from PyQt5.QtGui import QImage,QPixmap
+from PyQt5.QtGui import QPixmap
 
 db = sqlite3.connect("hospitaltest.db")
 cursor = db.cursor()
 db.commit()
 
-# convert to binary for photo
+# convert from photo to binary
 def convertToBinaryData(filename):
-    # Convert digital data to binary format
+
     with open(filename, 'rb') as file:
         blobData = file.read()
     return blobData
 
+# convert from binary to photo
 def writeTofile(data, filename):
-    # Convert binary data to proper format and write it on Hard Disk
     with open(filename, 'wb') as file:
         file.write(data)
     print("Stored blob data into: ", filename, "\n")
 
-class App(QtWidgets.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+#buttons init
         self.ui.pushButton.clicked.connect(self.add)
         self.ui.loadphoto.clicked.connect(self.uploadphoto)
-        self.ui.pushButton_3.clicked.connect(self.testdownload)
+        # self.ui.pushButton_3.clicked.connect(self.testdownload)
         self.ui.clearbutton.clicked.connect(self.clear)
+#default photo init
         global defpixmap
         defpixmap = QPixmap('default.jpg')
         defpixmap = defpixmap.scaled(241, 211)
         self.ui.photoLabel.setPixmap(defpixmap)
+        self.ui.photoLabel_2.setPixmap(defpixmap)
 
-    #upload photo function
+#upload photo function
     def uploadphoto(self):
         fname = QFileDialog.getOpenFileName(self, 'Choose image','c:\\', "Image files (*.jpg *.gif *.png)")
         if not fname[0]:
@@ -64,32 +67,33 @@ class App(QtWidgets.QMainWindow):
         empPhoto = convertToBinaryData(tmpfileway)
         cursor.execute("""INSERT INTO patients VALUES (?,?,?,?,?,?,?,?,?,?,?)""", (None, name, surname, age, birth, address, phone, chamber, datein, dateout, empPhoto))
         db.commit()
-        cursor.close()
 
-    def testdownload(self):
-        nametmp = self.ui.lineEdit.text()
-        cursor.execute("""SELECT patientid, patientphoto FROM patients WHERE patientid = ? """, nametmp)
+#test method for download photo from bd to folder
+    # def testdownload(self):
+    #     nametmp = self.ui.lineEdit.text()
+    #     cursor.execute("""SELECT patientid, patientphoto FROM patients WHERE patientid = ? """, nametmp)
+    #
+    #     record = cursor.fetchall()
+    #     for row in record:
+    #         idtmp = row[0]
+    #         photo = row[1]
+    #     photoPath = "D:\Desktop\hospitalqt\\" + str(idtmp) + ".jpg"
+    #     writeTofile(photo, photoPath)
 
-        record = cursor.fetchall()
-        for row in record:
-            idtmp = row[0]
-            photo = row[1]
-        photoPath = "D:\Desktop\hospitalqt\\" + str(idtmp) + ".jpg"
-        writeTofile(photo, photoPath)
-
+#method for clear all lineedit elements
     def clear(self):
-        self.ui.lineEditname.setText(None)
-        self.ui.linesurname.setText(None)
-        self.ui.lineage.setText(None)
-        self.ui.linebirth.setText(None)
-        self.ui.lineadress.setText(None)
-        self.ui.linephone.setText(None)
-        self.ui.linechamber.setText(None)
+        self.ui.lineEditname.clear()
+        self.ui.linesurname.clear()
+        self.ui.lineage.clear()
+        self.ui.linebirth.clear()
+        self.ui.lineadress.clear()
+        self.ui.linephone.clear()
+        self.ui.linechamber.clear()
         self.ui.dateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         self.ui.dateEdit_2.setDateTime(QtCore.QDateTime.currentDateTime())
         self.ui.photoLabel.setPixmap(defpixmap)
 
 app = QtWidgets.QApplication(sys.argv)
-window = App()
+window = MainWindow()
 window.show()
 app.exec_()

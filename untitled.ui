@@ -40,20 +40,20 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>830</width>
-      <height>561</height>
+      <width>841</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>830</width>
-      <height>561</height>
+      <width>841</width>
+      <height>551</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>830</width>
-      <height>561</height>
+      <width>841</width>
+      <height>551</height>
      </size>
     </property>
     <property name="currentIndex">
@@ -73,19 +73,6 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Прізвище</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineage"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="linesurname"/>
-       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
@@ -93,15 +80,8 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEditname"/>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Рік народження</string>
-         </property>
-        </widget>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="linesurname"/>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_3">
@@ -110,8 +90,28 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineage"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Прізвище</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditname"/>
+       </item>
+       <item row="4" column="1">
         <widget class="QLineEdit" name="linebirth"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Рік народження</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -177,38 +177,12 @@
        </item>
       </layout>
      </widget>
-     <widget class="QPushButton" name="pushButtonprevious">
-      <property name="geometry">
-       <rect>
-        <x>500</x>
-        <y>460</y>
-        <width>121</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Назад</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButtonnext">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>460</y>
-        <width>121</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Вперед</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>400</y>
-        <width>121</width>
+        <x>540</x>
+        <y>450</y>
+        <width>111</width>
         <height>51</height>
        </rect>
       </property>
@@ -219,9 +193,9 @@
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>400</y>
-        <width>121</width>
+        <x>670</x>
+        <y>450</y>
+        <width>111</width>
         <height>51</height>
        </rect>
       </property>
@@ -261,8 +235,8 @@
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>300</y>
+        <x>420</x>
+        <y>330</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -274,8 +248,8 @@
      <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>330</y>
+        <x>420</x>
+        <y>360</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -284,21 +258,196 @@
      <widget class="QPushButton" name="clearbutton">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>320</y>
-        <width>75</width>
-        <height>23</height>
+        <x>380</x>
+        <y>450</y>
+        <width>111</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
-       <string>clear</string>
+       <string>Очистити</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>250</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>320</y>
+        <width>241</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labeldiagnosis">
+         <property name="text">
+          <string>Дігноз</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labeldiagnosisdepartment">
+         <property name="text">
+          <string>Відділення</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_2"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_3"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>250</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Лікар</string>
       </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>Лікар</string>
      </attribute>
+     <widget class="QLabel" name="photoLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>30</y>
+        <width>241</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>30</y>
+        <width>281</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Прізвище</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineage_2"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="linesurname_2"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Ім'я</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditname_2"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Телефон            </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Вік</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="linenumber_2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>320</y>
+        <width>281</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="4" column="1">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Відділення</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="linestate_2"/>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="linesalary_2"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Спеціальність    </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Зарплатня</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Посада</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="linespeciality_2"/>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="linedepartment"/>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </widget>
   </widget>
